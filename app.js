@@ -1,6 +1,6 @@
 const express = require("express")
 const app = express()
-const port = 3000
+const port = 8000
 const router = express.Router()
 
 router.get('/', (req, res) => {
@@ -12,6 +12,7 @@ router.get('/price', (req, res) => {
 });
 
 app.use(express.static(__dirname + '/public'));
+app.use(express.static(__dirname + '/style.css'));
 app.use('/', router);
   
 app.listen(port, () => {
